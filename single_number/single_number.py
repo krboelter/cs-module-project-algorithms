@@ -4,8 +4,17 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    multi = []
+    for i in arr:
+        print(i)
+        if i not in multi:
+            multi.append(i)
+            arr.remove(i)
 
-    pass
+    for x in multi:
+        if x not in arr:
+            return x
+
 
 
 if __name__ == '__main__':
