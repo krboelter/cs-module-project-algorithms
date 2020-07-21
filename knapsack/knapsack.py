@@ -7,8 +7,20 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
     # Your code here
+    bp = {
+        'Value': 0, 'Chosen': []
+    }
 
-    pass
+    cap = 0
+    for i in range(len(items)):
+        if cap < capacity:
+            bp['Value'] += items[i].value
+            bp['Chosen'].append(items[i].index)
+
+            cap += items[i].size
+        else:
+            return bp
+            
 
 
 if __name__ == '__main__':
